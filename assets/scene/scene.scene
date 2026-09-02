@@ -7271,12 +7271,6 @@
     "cueView": {
       "__id__": 141
     },
-    "closeButton": {
-      "__id__": 103
-    },
-    "probabilityButton": {
-      "__id__": 170
-    },
     "probabilityPopup": {
       "__id__": 180
     },
