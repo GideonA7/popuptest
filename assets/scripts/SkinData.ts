@@ -83,12 +83,12 @@ export class SkinData {
             { skinId: 6, count: 22, isNew: true },
             { skinId: 10, count: 100, isNew: false },
             { skinId: 13, count: 99, isNew: false },
-            {skinId: 37, count: 21, isNew: false },
-            {skinId: 40, count: 3, isNew: false },
-            {skinId: 45, count: 21, isNew: true },
-            {skinId: 46, count: 5, isNew: false },
-            {skinId: 50, count: 1, isNew: false },
-            {skinId: 55, count: 105, isNew: true },
+            { skinId: 37, count: 21, isNew: false },
+            { skinId: 40, count: 3, isNew: false },
+            { skinId: 45, count: 21, isNew: true },
+            { skinId: 46, count: 5, isNew: false },
+            { skinId: 50, count: 1, isNew: false },
+            { skinId: 55, count: 105, isNew: true },
         ];
 
         // 皮肤类型状态数据：测试不同皮肤类型状态，可以改这里的数据（实际这里的数据应该从服务端接收）
@@ -113,7 +113,7 @@ export class SkinData {
         const pathName = type === SkinType.Cue ? "cue" : type === SkinType.Trail ? "trail" : type === SkinType.Pocket ? "pocket" : "table";   // 路径名称，统一根据类型分类存放的皮肤
         const rarityName = rarity === SkinRarity.Common ? "common" : rarity === SkinRarity.Rare ? "rare" : "epic";   // 稀有程度名称，统一根据稀有程度分类存放的皮肤
         for (let i = 0; i < count; i++) {
-            const num = (i + 1) < 10 ? `0${i + 1}` : i + 1;   // 皮肤编号，统一根据编号分类存放的皮肤
+            const num = String(i + 1).padStart(2, '0');   // 皮肤编号，统一根据编号分类存放的皮肤
             // 拼接出来的路径比如：texture/cue/common/Property 1=01/spriteFrame
             this.skinConfigs.push({ id: id + i, type: type, previewPath: `texture/${pathName}/${rarityName}/Property 1=${num}/spriteFrame`, rarity: rarity });   // 将皮肤配置数据push到configs中
         }
